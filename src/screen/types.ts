@@ -2,12 +2,12 @@ import { NavigationParamList } from "../navigation";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp } from "@react-navigation/native";
 
-export interface data {
+export type Eventdata = {
   type: string;
   date: string;
   eventId: string;
-  ack?: boolean;
-}
+  checked?: boolean;
+};
 
 type HomeScreenNavigationProp = StackNavigationProp<
   NavigationParamList,

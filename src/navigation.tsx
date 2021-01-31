@@ -6,11 +6,11 @@ import {
 } from "@react-navigation/stack";
 import Home from "./screen/home";
 import Detail from "./screen/details";
-import { data } from "./screen/types";
+import { Eventdata } from "./screen/types";
 
 export type NavigationParamList = {
   Home: undefined;
-  Detail: { event: data } | undefined;
+  Detail: { event: Eventdata };
 };
 
 const options: StackNavigationOptions = {

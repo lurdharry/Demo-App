@@ -1,3 +1,3 @@
-import { data } from "../screen/types";
+import { Eventdata } from "../screen/types";
 
-export interface EventItems extends Array<data> {}
+export interface EventList extends Array<Eventdata> {}
