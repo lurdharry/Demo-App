@@ -6,10 +6,11 @@ import {
 } from "@react-navigation/stack";
 import Home from "./screen/home";
 import Detail from "./screen/details";
+import { data } from "./screen/types";
 
-type NavigationParamList = {
+export type NavigationParamList = {
   Home: undefined;
-  Detail: { userId: string };
+  Detail: { event: data } | undefined;
 };
 
 const options: StackNavigationOptions = {
@@ -26,15 +27,3 @@ export default function MainNavigator() {
     </RootStack.Navigator>
   );
 }
-
-// type DetailScreenNavigationProp = StackNavigationProp<
-//   NavigationParamList,
-//   "Detail"
-// >;
-
-// type DetailScreenRouteProp = RouteProp<NavigationParamList, "Detail">;
-
-// type props = {
-//   navigation: DetailScreenNavigationProp;
-//   route: DetailScreenRouteProp;
-// };
