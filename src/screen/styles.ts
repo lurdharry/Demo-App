@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { hp, paddingTopiOS, wp } from "../shared";
+import { hp, paddingTopiOS, wp, screenWidth } from "../shared";
 import colors from "../constants/colors";
 
 export const HomeStyles = StyleSheet.create({
@@ -9,27 +9,11 @@ export const HomeStyles = StyleSheet.create({
   },
   listContainer: {
     backgroundColor: colors.main,
-    // flex: 3,
   },
   container: {
     flex: 1,
     backgroundColor: colors.statusBar,
     paddingTop: paddingTopiOS,
-  },
-  header: {
-    width: "100%",
-    backgroundColor: colors.white,
-    paddingVertical: hp(8),
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  name: {
-    color: colors.lynch,
-  },
-  event: {
-    color: colors.nobel,
-    fontSize: wp(16),
-    // lineHeight: hp(24),
   },
 });
 
@@ -47,7 +31,7 @@ export const DetailStyles = StyleSheet.create({
     backgroundColor: colors.white,
     flex: 1,
     alignItems: "center",
-    width: "100%",
+    width: screenWidth,
   },
   bottomView: {
     position: "absolute",

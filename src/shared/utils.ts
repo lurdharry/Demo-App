@@ -2,10 +2,10 @@ import { Dimensions, Platform, PixelRatio, StatusBar } from "react-native";
 import moment from "moment";
 
 // Retrieve initial screen's width
-const screenWidth = Dimensions.get("window").width;
+export const screenWidth = Dimensions.get("window").width;
 
 // Retrieve initial screen's height
-const screenHeight = Dimensions.get("window").height;
+export const screenHeight = Dimensions.get("window").height;
 
 /**
  * Converts provided width percentage to independent pixel (dp).
