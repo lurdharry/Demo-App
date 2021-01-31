@@ -1,17 +1,21 @@
-import React, { ReactElement, ReactNode, ReactChild } from "react";
-import { View, StyleSheet, ViewStyle } from "react-native";
-import { Heart } from "../../assets/svgs";
-import { wp, hp } from "./utils";
-import colors from "../constants/colors";
+import React, { ReactChild } from "react";
+import {
+  View,
+  ViewStyle,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from "react-native";
+import { formatDate } from "./utils";
 import { MediumText, RegularText } from "./text";
 import { CardStyles as styles } from "./styles";
 
-interface props {
-  name?: string;
-  date?: string;
+interface props extends TouchableOpacityProps {
+  name: string;
+  date: string;
   checked?: boolean;
   icon: ReactChild;
   style?: ViewStyle;
+  onPress: () => void;
 }
 
 export const EventCard: React.FC<props> = ({
@@ -20,12 +24,20 @@ export const EventCard: React.FC<props> = ({
   checked,
   icon,
   style,
-}) => (
-  <View style={[styles.card, checked && { opacity: 0.5 }, style]}>
-    {icon}
-    <View style={styles.left}>
-      <MediumText title="Abnormal activity" style={styles.name} />
-      <RegularText title="Today 20:28" style={styles.date} />
-    </View>
-  </View>
-);
+  onPress,
+}) => {
+  const Date = formatDate(date);
+  return (
+    <TouchableOpacity
+      activeOpacity={0.7}
+      style={[styles.card, checked && { opacity: 0.5 }, style]}
+      onPress={onPress}
+    >
+      {icon}
+      <View style={styles.left}>
+        <MediumText title={name} style={styles.name} />
+        <RegularText title={Date} style={styles.date} />
+      </View>
+    </TouchableOpacity>
+  );
+};

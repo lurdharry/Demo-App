@@ -16,6 +16,15 @@ export const ButtonStyles = StyleSheet.create({
     color: colors.white,
     fontFamily: "roboto-medium",
   },
+  greyButton: {
+    backgroundColor: colors.grey,
+
+    borderWidth: hp(1),
+    borderColor: colors.border,
+  },
+  title2: {
+    color: colors.nobel,
+  },
 });
 
 export const CardStyles = StyleSheet.create({
@@ -29,6 +38,7 @@ export const CardStyles = StyleSheet.create({
     borderColor: colors.border,
     flexDirection: "row",
     alignItems: "center",
+    marginBottom: hp(16),
   },
   left: {
     marginLeft: wp(16),
@@ -65,6 +75,37 @@ export const HeaderStyles = StyleSheet.create({
   event: {
     color: colors.nobel,
     fontSize: wp(16),
+  },
+  detailBox: {
+    paddingBottom: hp(28),
+    paddingHorizontal: wp(26),
+    backgroundColor: colors.pablue,
+    paddingTop: hp(8),
+    alignItems: "center",
+    width: "100%",
+  },
+  headerTop: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: hp(35),
+    width: "100%",
+  },
+  nameBox: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  detailName: {
+    color: colors.white,
+    fontSize: hp(12),
+    lineHeight: hp(18),
+  },
+  detailEvent: {
+    color: colors.white,
+  },
+  empty: {
+    height: hp(24),
+    width: wp(24),
   },
 });
 

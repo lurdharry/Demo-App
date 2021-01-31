@@ -13,19 +13,23 @@ interface props extends TouchableOpacityProps {
   title: string;
   style?: ViewStyle;
   titleStyle?: TextStyle;
+  isGrey?: boolean;
 }
 
 export const Button: React.FC<props> = ({
   style,
   title,
   titleStyle,
+  isGrey,
   ...rest
 }) => (
   <TouchableOpacity
-    style={[styles.button, style]}
+    style={[styles.button, isGrey && styles.greyButton, style]}
     activeOpacity={0.7}
     {...rest}
   >
-    <Text style={[styles.title, titleStyle]}>{title}</Text>
+    <Text style={[styles.title, isGrey && styles.title2, titleStyle]}>
+      {title}
+    </Text>
   </TouchableOpacity>
 );
