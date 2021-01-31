@@ -28,16 +28,21 @@ export const ButtonStyles = StyleSheet.create({
 });
 
 export const CardStyles = StyleSheet.create({
+  touchItem: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  checked: {
+    opacity: 0.4,
+  },
   card: {
     width: wp(363),
     backgroundColor: colors.white,
     alignSelf: "center",
     padding: wp(16),
     borderRadius: hp(8),
-    borderWidth: wp(2),
+    borderWidth: hp(2),
     borderColor: colors.border,
-    flexDirection: "row",
-    alignItems: "center",
     marginBottom: hp(16),
   },
   left: {

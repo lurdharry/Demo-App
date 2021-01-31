@@ -27,17 +27,20 @@ export const EventCard: React.FC<props> = ({
   onPress,
 }) => {
   const Date = formatDate(date);
+
   return (
-    <TouchableOpacity
-      activeOpacity={0.7}
-      style={[styles.card, checked && { opacity: 0.5 }, style]}
-      onPress={onPress}
-    >
-      {icon}
-      <View style={styles.left}>
-        <MediumText title={name} style={styles.name} />
-        <RegularText title={Date} style={styles.date} />
-      </View>
-    </TouchableOpacity>
+    <View style={[styles.card, checked && styles.checked, style]}>
+      <TouchableOpacity
+        style={styles.touchItem}
+        activeOpacity={0.7}
+        onPress={onPress}
+      >
+        {icon}
+        <View style={styles.left}>
+          <MediumText title={name} style={styles.name} />
+          <RegularText title={Date} style={styles.date} />
+        </View>
+      </TouchableOpacity>
+    </View>
   );
 };
