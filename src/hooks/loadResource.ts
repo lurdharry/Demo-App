@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import * as Font from "expo-font";
 
 export default function LoadAssets() {
-  const [isLoadingComplete, setLoadingComplete] = useState(false);
+  const [isLoadingComplete, setLoadingComplete] = useState<boolean>(false);
 
   // Load any resources or data that we need prior to rendering the app
   useEffect(() => {

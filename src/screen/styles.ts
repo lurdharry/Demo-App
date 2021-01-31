@@ -47,4 +47,8 @@ export const DetailStyles = StyleSheet.create({
     position: "absolute",
     bottom: hp(30),
   },
+  name: {
+    marginTop: hp(32),
+    marginBottom: hp(16),
+  },
 });

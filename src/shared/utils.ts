@@ -1,4 +1,5 @@
 import { Dimensions, Platform, PixelRatio, StatusBar } from "react-native";
+import moment from "moment";
 
 // Retrieve initial screen's width
 const screenWidth = Dimensions.get("window").width;
@@ -83,3 +84,14 @@ export function ifIphoneX(iphoneXStyle: any, regularStyle: any) {
   }
   return regularStyle;
 }
+
+export const formatDate = (date: string) => {
+  return moment(date).calendar(null, {
+    lastDay: "[Yesterday] HH:mm",
+    sameDay: "[Today] HH:mm",
+    nextDay: "[Tomorrow] HH:mm",
+    lastWeek: "[last] dddd  HH:mm",
+    nextWeek: "dddd  HH:mm",
+    sameElse: "MMM Do YYYY, HH:mm",
+  });
+};
