@@ -3,7 +3,7 @@ import React from "react";
 import { Heart, AbnormalHeart, UpAtNight } from "../../assets/svgs";
 import colors from "../constants/colors";
 
-export const getIconAndName = (type?: string, isdetail?: boolean) => {
+export const getIconAndName = (type: string, isdetail?: boolean) => {
   switch (type) {
     case "upAtNight":
       return {
