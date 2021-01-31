@@ -71,10 +71,11 @@ export const HeaderStyles = StyleSheet.create({
   },
   name: {
     color: colors.lynch,
+    fontSize: hp(12),
   },
   event: {
     color: colors.nobel,
-    fontSize: wp(16),
+    fontSize: hp(16),
   },
   detailBox: {
     paddingBottom: hp(28),

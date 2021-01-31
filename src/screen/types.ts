@@ -21,7 +21,6 @@ type DetailScreenNavigationProp = StackNavigationProp<
 
 export type HomeScreenProps = {
   navigation: HomeScreenNavigationProp;
-  // route: DetailScreenRouteProp;
 };
 
 type DetailScreenRouteProp = RouteProp<NavigationParamList, "Detail">;

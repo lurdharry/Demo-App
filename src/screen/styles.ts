@@ -9,11 +9,11 @@ export const HomeStyles = StyleSheet.create({
   },
   listContainer: {
     backgroundColor: colors.main,
-    flex: 1,
+    // flex: 3,
   },
   container: {
     flex: 1,
-    backgroundColor: colors.grey,
+    backgroundColor: colors.statusBar,
     paddingTop: paddingTopiOS,
   },
   header: {
@@ -39,16 +39,30 @@ export const DetailStyles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.statusBar,
     paddingTop: paddingTopiOS,
     alignItems: "center",
+  },
+  second: {
+    backgroundColor: colors.white,
+    flex: 1,
+    alignItems: "center",
+    width: "100%",
   },
   bottomView: {
     position: "absolute",
     bottom: hp(30),
   },
   name: {
-    marginTop: hp(32),
-    marginBottom: hp(16),
+    marginTop: hp(30),
+    marginBottom: wp(16),
+    fontSize: hp(22),
+    lineHeight: hp(34),
+    color: colors.nobel,
+  },
+  subTitle: {
+    textAlign: "center",
+    width: wp(307),
+    color: colors.nobel,
   },
 });

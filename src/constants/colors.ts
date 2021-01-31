@@ -8,4 +8,5 @@ export default {
   pablue: "#00AEC7",
   grey: "#F5F6F7",
   black: "#000000",
+  statusBar: "#DDDDDD",
 };
