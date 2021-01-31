@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View } from "react-native";
 import { DetailScreenHeader, MediumText, RegularText } from "../shared";
 import { DetailScreenProps } from "./types";
@@ -7,10 +7,15 @@ import { DetailStyles as styles } from "./styles";
 import { getIconAndName } from "./utils";
 import { StatusBar } from "expo-status-bar";
 import colors from "../constants/colors";
+import { AppContext } from "../context/context";
 
 export default function Detail({ navigation, route }: DetailScreenProps) {
+  const { dispatch } = useContext(AppContext);
+  // navigation props
   const detail = route.params?.event;
-  const { icon, name } = getIconAndName(detail?.type, true);
+  console.log(detail);
+  // icon and title handler
+  const { icon, name } = getIconAndName(detail.type, true);
   return (
     <View style={styles.container}>
       <StatusBar style="light" backgroundColor={colors.statusBar} />
@@ -30,7 +35,12 @@ export default function Detail({ navigation, route }: DetailScreenProps) {
           <Button
             isGrey
             title="Acknowledge"
-            onPress={() => console.log("sjsj")}
+            onPress={() =>
+              dispatch({
+                type: "SET_ACTIVE",
+                id: detail?.eventId,
+              })
+            }
           />
         </View>
       </View>
