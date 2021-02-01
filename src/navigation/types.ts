@@ -1,4 +1,3 @@
-import { NavigationParamList } from ".";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp } from "@react-navigation/native";
 
@@ -28,4 +27,9 @@ type DetailScreenRouteProp = RouteProp<NavigationParamList, "Detail">;
 export type DetailScreenProps = {
   navigation: DetailScreenNavigationProp;
   route: DetailScreenRouteProp;
+};
+
+export type NavigationParamList = {
+  Home: undefined;
+  Detail: { event: { id: string; type: string; header?: string } };
 };
