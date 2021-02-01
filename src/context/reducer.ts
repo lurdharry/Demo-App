@@ -1,30 +1,26 @@
-import { InitialStateType, initialState } from "./types";
+import { initialState } from "./types";
 
-export type UpdateAction = { type: "SET_ACTIVE"; id?: string };
-export type FetchAction = { type: "FETCH"; payload: InitialStateType };
+export type UpdateAction = { type: "SET_ACTIVE"; payload: { id: string } };
 
-export const EventReducer = (
-  state = initialState,
-  action: UpdateAction | FetchAction
-) => {
+export const EventReducer = (state = initialState, action: UpdateAction) => {
   switch (action.type) {
-    case "FETCH": {
-      return {
-        ...state,
-        EventList: action.payload.EventList,
-        status: action.payload.status,
-      };
-    }
     case "SET_ACTIVE": {
-      const label = action.id;
-      return {
-        ...state,
-        EventList: state.EventList.map(item =>
-          item.eventId === label ? { ...item, checked: true } : item
-        ),
-      };
+      const id = action.payload.id;
+      let isFavorite = state.CheckedEvent.includes(id);
+      if (isFavorite) {
+        return {
+          ...state,
+          CheckedEvent: state.CheckedEvent.filter(
+            repoId => repoId !== action.payload?.id
+          ),
+        };
+      } else {
+        return {
+          ...state,
+          CheckedEvent: [...state.CheckedEvent, action.payload.id],
+        };
+      }
     }
-
     default:
       return state;
   }

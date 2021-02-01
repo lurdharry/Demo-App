@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { View } from "react-native";
 import { DetailScreenHeader, MediumText, RegularText } from "../shared";
-import { DetailScreenProps } from "./types";
+import { DetailScreenProps } from "../navigation/types";
 import { Button } from "../shared/button";
 import { DetailStyles as styles } from "./styles";
 import { getIconAndName } from "./utils";
@@ -10,12 +10,22 @@ import colors from "../constants/colors";
 import { AppContext } from "../context/context";
 
 export default function Detail({ navigation, route }: DetailScreenProps) {
-  const { dispatch } = useContext(AppContext);
+  const { dispatch, state } = useContext(AppContext);
   // navigation props
   const detail = route.params?.event;
-  console.log(detail);
+
+  const isAck = state.CheckedEvent.includes(detail.id);
+
+  // buttonAction
+  const setAction = async () => {
+    await dispatch({
+      type: "SET_ACTIVE",
+      payload: { id: detail.id },
+    });
+  };
   // icon and title handler
   const { icon, name } = getIconAndName(detail.type, true);
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" backgroundColor={colors.statusBar} />
@@ -23,6 +33,7 @@ export default function Detail({ navigation, route }: DetailScreenProps) {
         name="Gloria Thompson"
         onPress={() => navigation.pop()}
         icon={icon}
+        id={detail.id}
       />
       <View style={styles.second}>
         <MediumText title={name} style={styles.name} />
@@ -34,13 +45,8 @@ export default function Detail({ navigation, route }: DetailScreenProps) {
           <Button title="Visualise" style={styles.button} />
           <Button
             isGrey
-            title="Acknowledge"
-            onPress={() =>
-              dispatch({
-                type: "SET_ACTIVE",
-                id: detail?.eventId,
-              })
-            }
+            title={isAck ? "Acknowledged" : "Acknowledge"}
+            onPress={setAction}
           />
         </View>
       </View>

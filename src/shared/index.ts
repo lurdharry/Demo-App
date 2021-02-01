@@ -1,4 +1,4 @@
 export * from "./text";
-export * from "./utils";
+export * from "./layout";
 export * from "./header";
 export * from "./card";

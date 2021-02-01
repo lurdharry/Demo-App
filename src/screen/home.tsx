@@ -1,36 +1,31 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { View, FlatList, ActivityIndicator } from "react-native";
 import { Header, EventCard } from "../shared/index";
 import { StatusBar } from "expo-status-bar";
 import { Loadevents } from "../hooks/loadevents";
-import { Eventdata, HomeScreenProps } from "./types";
+import { Eventdata, HomeScreenProps } from "../navigation/types";
 import { getIconAndName } from "./utils";
 import { HomeStyles as styles } from "./styles";
 import { AppContext } from "../context/context";
 
 export default function Home({ navigation }: HomeScreenProps) {
-  const { state, dispatch } = useContext(AppContext);
-  const { Data, status } = Loadevents();
-
-  useEffect(() => {
-    dispatch({
-      type: "FETCH",
-      payload: {
-        status: status,
-        EventList: Data,
-      },
-    });
-  }, [status, Data]);
+  const { status, Data } = Loadevents();
+  const { state } = useContext(AppContext);
 
   const _renderItem = ({ item }: { item: Eventdata }) => {
     const { name, icon } = getIconAndName(item.type);
     return (
       <EventCard
+        id={item.eventId}
         icon={icon}
         name={name}
         date={item.date}
-        checked={item.checked}
-        onPress={() => navigation.navigate("Detail", { event: item })}
+        checked={state.CheckedEvent.includes(item.eventId)}
+        onPress={() =>
+          navigation.navigate("Detail", {
+            event: { id: item.eventId, type: item.type },
+          })
+        }
       />
     );
   };
@@ -39,17 +34,17 @@ export default function Home({ navigation }: HomeScreenProps) {
       <StatusBar backgroundColor="#DDDDDD" style="light" />
       <View style={styles.container}>
         <Header name="Gloria Thompson" />
-        {state.status === "loading" && (
+        {status === "loading" && (
           <ActivityIndicator style={{ flex: 1 }} size="large" color="red" />
         )}
-        {state.EventList && (
+        {Data && (
           <FlatList
             style={styles.listContainer}
             contentContainerStyle={styles.content}
-            data={state.EventList}
+            data={Data}
             renderItem={_renderItem}
             keyExtractor={item => item.eventId}
-            extraData={state}
+            extraData={Data}
           />
         )}
       </View>

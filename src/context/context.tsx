@@ -1,10 +1,10 @@
 import React, { createContext } from "react";
-import { EventReducer, UpdateAction, FetchAction } from "./reducer";
+import { EventReducer, UpdateAction } from "./reducer";
 import { InitialStateType, initialState } from "./types";
 
 export const AppContext = createContext<{
   state: InitialStateType;
-  dispatch: React.Dispatch<UpdateAction | FetchAction>;
+  dispatch: React.Dispatch<UpdateAction>;
 }>({
   state: initialState,
   dispatch: () => null,
