@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "../constants/colors";
-import { wp, hp, paddingTopiOS } from "./utils";
+import { wp, hp, paddingTopiOS } from "./layout";
 
 export const ButtonStyles = StyleSheet.create({
   button: {

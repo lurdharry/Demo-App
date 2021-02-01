@@ -7,16 +7,12 @@ interface Props extends TextProps {
   style?: TextStyle;
 }
 
-const RegularText: React.FC<Props> = ({ title, style, ...rest }) => (
-  <Text style={[styles.RegularText, style]} {...rest}>
-    {title}
-  </Text>
+const RegularText: React.FC<Props> = ({ title, style }) => (
+  <Text style={[styles.RegularText, style]}>{title}</Text>
 );
 
-const MediumText: React.FC<Props> = ({ title, style, ...rest }) => (
-  <Text style={[styles.medium, style]} {...rest}>
-    {title}
-  </Text>
+const MediumText: React.FC<Props> = ({ title, style }) => (
+  <Text style={[styles.medium, style]}>{title}</Text>
 );
 
 export { RegularText, MediumText };
