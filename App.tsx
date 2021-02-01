@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import MainNavigator from "./src/navigation";
 import LoadAssets from "./src/hooks/loadResource";
@@ -9,9 +8,8 @@ import { AppProvider } from "./src/context/context";
 const client = new QueryClient();
 
 export default function App() {
+  // load assetsa and fonts
   const isLoadingComplete = LoadAssets();
-
-  // const context = useContext(Ap);
 
   if (!isLoadingComplete) {
     return null;
@@ -27,12 +25,3 @@ export default function App() {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
