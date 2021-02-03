@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header HeaderBar component renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#FFFFFF",
+      "justifyContent": "center",
+      "paddingVertical": 14.5,
+      "width": "100%",
+    }
+  }
+>
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontFamily": "roboto-regular",
+            "fontSize": 22,
+            "lineHeight": 33,
+          },
+          Object {
+            "color": "#8F92B2",
+            "fontSize": 22,
+          },
+        ]
+      }
+    >
+      Jack Dorsey
+    </Text>
+  </View>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "fontFamily": "roboto-regular",
+          "fontSize": 22,
+          "lineHeight": 33,
+        },
+        Object {
+          "color": "#343866",
+          "fontSize": 29,
+        },
+      ]
+    }
+  >
+    Events
+  </Text>
+</View>
+`;

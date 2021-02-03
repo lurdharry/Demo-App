@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button HeaderBar component renders correctly 1`] = `
+exports[`Button Button component renders correctly 1`] = `
 <View
   accessible={true}
   focusable={false}
@@ -36,7 +36,7 @@ exports[`Button HeaderBar component renders correctly 1`] = `
       ]
     }
   >
-    Incorrect Path
+    Login
   </Text>
 </View>
 `;
