@@ -12,7 +12,7 @@ export const HomeStyles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: colors.statusBar,
+    backgroundColor: colors.white,
     paddingTop: paddingTopiOS,
   },
 });
@@ -23,7 +23,7 @@ export const DetailStyles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: colors.statusBar,
+    backgroundColor: colors.pablue,
     paddingTop: paddingTopiOS,
     alignItems: "center",
   },

@@ -41,8 +41,7 @@ const heightPercentageToDP = (heightPercent: string) => {
   return PixelRatio.roundToNearestPixel((screenHeight * elemHeight) / 100);
 };
 
-export { widthPercentageToDP, heightPercentageToDP };
-//Asuming designs will be in dimensions 414 x 731 (for iPhonex) by default
+// UI Design  dimension is 414 x 731
 export const hp = (height: number) => {
   return heightPercentageToDP(((height / 731) * 100).toString());
 };
@@ -85,6 +84,7 @@ export function ifIphoneX(iphoneXStyle: any, regularStyle: any) {
   return regularStyle;
 }
 
+// utility to format Date
 export const formatDate = (date: string) => {
   return moment(date).calendar(null, {
     lastDay: "[Yesterday] HH:mm",

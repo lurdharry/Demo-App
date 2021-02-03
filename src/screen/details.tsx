@@ -28,7 +28,7 @@ export default function Detail({ navigation, route }: DetailScreenProps) {
 
   return (
     <View style={styles.container}>
-      <StatusBar style="light" backgroundColor={colors.statusBar} />
+      <StatusBar style="light" backgroundColor={colors.pablue} />
       <DetailScreenHeader
         name="Gloria Thompson"
         onPress={() => navigation.pop()}

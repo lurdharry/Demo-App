@@ -7,6 +7,7 @@ import { Eventdata, HomeScreenProps } from "../navigation/types";
 import { getIconAndName } from "./utils";
 import { HomeStyles as styles } from "./styles";
 import { AppContext } from "../context/context";
+import colors from "../constants/colors";
 
 export default function Home({ navigation }: HomeScreenProps) {
   const { status, Data } = Loadevents();
@@ -31,7 +32,7 @@ export default function Home({ navigation }: HomeScreenProps) {
   };
   return (
     <>
-      <StatusBar backgroundColor="#DDDDDD" style="light" />
+      <StatusBar backgroundColor={colors.white} style="dark" />
       <View style={styles.container}>
         <Header name="Gloria Thompson" />
         {status === "loading" && (

@@ -21,8 +21,8 @@ export const Header: React.FC<props> = ({ name }) => (
   <View style={styles.header}>
     <SharedElement id="header" style={{ alignItems: "center" }}>
       <RegularText title={name} style={styles.name} />
-      <RegularText title="Events" style={styles.event} />
     </SharedElement>
+    <RegularText title="Events" style={styles.event} />
   </View>
 );
 
@@ -37,12 +37,13 @@ export const DetailScreenHeader: React.FC<detailProps> = ({
       <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
         <BackArrow />
       </TouchableOpacity>
-      <SharedElement id="header">
-        <View style={styles.nameBox}>
+
+      <View style={styles.nameBox}>
+        <SharedElement id="header">
           <RegularText title={name} style={styles.detailName} />
-          <MediumText title="Event" style={styles.detailEvent} />
-        </View>
-      </SharedElement>
+        </SharedElement>
+        <MediumText title="Event" style={styles.detailEvent} />
+      </View>
 
       <View style={styles.empty} />
     </View>
