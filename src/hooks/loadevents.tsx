@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-import { EventList } from "./types";
+import { EventList } from "../types/types.d";
 
 const fetchevent = async () => {
   const res = await axios.get(

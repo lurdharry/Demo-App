@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { View } from "react-native";
 import { DetailScreenHeader, MediumText, RegularText } from "../shared";
-import { DetailScreenProps } from "../navigation/types";
+import { DetailScreenProps } from "../types/types.d";
 import { Button } from "../shared/button";
 import { DetailStyles as styles } from "./styles";
 import { getIconAndName } from "./utils";

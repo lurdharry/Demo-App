@@ -1,4 +1,4 @@
-import { initialState } from "./types";
+import { initialState } from "../types/types.d";
 
 export type UpdateAction = { type: "SET_ACTIVE"; payload: { id: string } };
 

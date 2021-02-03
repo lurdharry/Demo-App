@@ -33,3 +33,13 @@ export type NavigationParamList = {
   Home: undefined;
   Detail: { event: { id: string; type: string; header?: string } };
 };
+
+export interface EventList extends Array<Eventdata> {}
+
+export type InitialStateType = {
+  CheckedEvent: string[];
+};
+
+export const initialState: InitialStateType = {
+  CheckedEvent: [],
+};

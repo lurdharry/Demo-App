@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 import { EventReducer, UpdateAction } from "./reducer";
-import { InitialStateType, initialState } from "./types";
+import { InitialStateType, initialState } from "../types/types.d";
 
 export const AppContext = createContext<{
   state: InitialStateType;

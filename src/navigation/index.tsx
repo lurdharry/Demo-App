@@ -7,7 +7,7 @@ import {
 } from "react-navigation-shared-element";
 import Home from "../screen/home";
 import Detail from "../screen/details";
-import { NavigationParamList } from "./types";
+import { NavigationParamList } from "../types/types.d";
 
 const options: StackNavigationOptions = {
   headerShown: false,
