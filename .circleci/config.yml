@@ -7,9 +7,12 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
+          pkg-manager: yarn
           cache-path: ~/project/node_modules
           override-ci-command: yarn add
-      - run: yarn jest
+      - run: 
+         command: yarn jest
+         name: Run YARN tests
 workflows:
   node-tests:
     jobs:
