@@ -14,7 +14,6 @@ export default function LoadAssets() {
           "roboto-regular": require("../../assets/fonts/roboto-regular.ttf"),
         });
       } catch (e) {
-        // We might want to provide this error information to an error reporting service
         console.warn(e);
       } finally {
         setLoadingComplete(true);

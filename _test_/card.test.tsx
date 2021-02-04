@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
+import { EventCard } from "../src/shared/card";
 import { View } from "react-native";
-import { Header, DetailScreenHeader } from "../src/shared/header";
 
 jest.mock("react-native-shared-element", () => {
   const { View } = require("react-native");
@@ -14,22 +14,16 @@ jest.mock("react-native-shared-element", () => {
   };
 });
 
-describe("Header", () => {
-  const text = "Jack Dorsey";
-  const mockFn = jest.fn();
-
-  it("HeaderBar component renders correctly", () => {
-    const instance = renderer.create(<Header name={text} />);
-    expect(instance).toMatchSnapshot();
-  });
-
-  it("DetailHeader component renders correctly", () => {
+describe("<EvevtCard/>", () => {
+  it("EvevtCard component renders correctly", () => {
+    const press = jest.fn();
+    const text = "Up at Night";
     const instance = renderer.create(
-      <DetailScreenHeader
+      <EventCard
         name={text}
+        date="2021-01-20T14:56:41+00:90"
         icon={<View />}
-        id="header"
-        onPress={mockFn}
+        onPress={press}
       />
     );
     expect(instance).toMatchSnapshot();

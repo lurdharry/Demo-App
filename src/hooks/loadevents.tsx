@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-import { EventList } from "./types";
+import { EventList } from "../types/types.d";
 
-const fetchevent = async () => {
+export const fetchevent = async () => {
   const res = await axios.get(
     "https://next.json-generator.com/api/json/get/E12TK9oJ9"
   );
