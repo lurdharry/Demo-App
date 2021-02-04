@@ -39,7 +39,11 @@ export default function Home({ navigation }: HomeScreenProps) {
       <View style={styles.container}>
         <Header name="Gloria Thompson" />
         {status === "loading" && (
-          <ActivityIndicator style={{ flex: 1 }} size="large" color="red" />
+          <ActivityIndicator
+            style={styles.spinner}
+            size="large"
+            color={colors.pablue}
+          />
         )}
         {Data && (
           <FlatList

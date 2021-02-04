@@ -3,6 +3,7 @@ import { hp, paddingTopiOS, wp, screenWidth } from "../shared";
 import colors from "../constants/colors";
 
 export const HomeStyles = StyleSheet.create({
+  spinner: { flex: 1 },
   content: {
     paddingBottom: hp(50),
     paddingTop: hp(24),
