@@ -21,7 +21,7 @@ describe("<EvevtCard/>", () => {
     const instance = renderer.create(
       <EventCard
         name={text}
-        date="2021-01-20T14:56:41+00:00"
+        date="2021-01-20T14:56:41+00:90"
         icon={<View />}
         onPress={press}
       />

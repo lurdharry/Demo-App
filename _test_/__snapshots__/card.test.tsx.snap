@@ -86,7 +86,7 @@ exports[`<EvevtCard/> EvevtCard component renders correctly 1`] = `
           ]
         }
       >
-        Jan 20th 2021, 15:56
+        Jan 20th 2021, 14:26
       </Text>
     </View>
   </View>
