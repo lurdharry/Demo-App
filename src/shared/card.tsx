@@ -18,6 +18,7 @@ interface props extends TouchableOpacityProps {
   style?: ViewStyle;
   id?: string;
   onPress: () => void;
+  testId?: string;
 }
 
 export const EventCard: React.FC<props> = ({
@@ -28,10 +29,14 @@ export const EventCard: React.FC<props> = ({
   style,
   id,
   onPress,
+  testId,
 }) => {
   const Date = formatDate(date);
   return (
-    <View style={[styles.card, checked && styles.checked, style]}>
+    <View
+      style={[styles.card, checked && styles.checked, style]}
+      testID={testId}
+    >
       <TouchableOpacity
         style={styles.touchItem}
         activeOpacity={0.7}

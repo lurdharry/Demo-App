@@ -3,7 +3,7 @@ import { View, FlatList, ActivityIndicator } from "react-native";
 import { Header, EventCard } from "../shared/index";
 import { StatusBar } from "expo-status-bar";
 import { Loadevents } from "../hooks/loadevents";
-import { Eventdata, HomeScreenProps } from "../navigation/types";
+import { Eventdata, HomeScreenProps } from "../types/types.d";
 import { getIconAndName } from "./utils";
 import { HomeStyles as styles } from "./styles";
 import { AppContext } from "../context/context";
@@ -11,12 +11,14 @@ import colors from "../constants/colors";
 
 export default function Home({ navigation }: HomeScreenProps) {
   const { status, Data } = Loadevents();
+  console.log(Data);
   const { state } = useContext(AppContext);
 
-  const _renderItem = ({ item }: { item: Eventdata }) => {
+  const _renderItem = ({ item, index }: { item: Eventdata; index: number }) => {
     const { name, icon } = getIconAndName(item.type);
     return (
       <EventCard
+        testId={`event-card-${index}`}
         id={item.eventId}
         icon={icon}
         name={name}
