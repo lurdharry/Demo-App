@@ -2,6 +2,13 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react-native";
 import Home from "../src/screen/home";
 
+const createTestProps = (props: any) => ({
+  navigation: {
+    navigate: jest.fn(),
+  },
+  ...props,
+});
+
 jest.mock("react-native-shared-element", () => {
   const { View } = require("react-native");
   const SharedElement = (props: any) => {
@@ -37,12 +44,13 @@ jest.mock("react-query", () => {
 });
 
 describe("App flow works correctly", () => {
-  describe("Screen 1", () => {
-    it("navigates on EventCard press", () => {
-      const navigate = jest.fn();
-      const { getByTestId } = render(<Home navigation={{ navigate }} />);
+  describe("Navigation", () => {
+    const props: any = createTestProps({});
+
+    it("navigates to detail Screen on EventCard press", () => {
+      const { getByTestId } = render(<Home {...props} />);
       fireEvent.press(getByTestId(`event-card-1`));
-      expect(navigate).toHaveBeenCalled();
+      expect(props.navigation.navigate).toHaveBeenCalled();
     });
   });
 });

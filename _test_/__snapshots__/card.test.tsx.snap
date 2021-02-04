@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EvevtCard/> EvevtCard component renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignSelf": "center",
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#E1E2F0",
+        "borderRadius": 14.5,
+        "borderWidth": 3.5,
+        "marginBottom": 29,
+        "padding": 29,
+        "width": 657.5,
+      },
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "opacity": 1,
+      }
+    }
+  >
+    <View>
+      <View />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "marginLeft": 29,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "roboto-medium",
+              "fontSize": 22,
+              "lineHeight": 33,
+            },
+            Object {
+              "color": "#343866",
+              "fontSize": 25.5,
+              "lineHeight": 44,
+            },
+          ]
+        }
+      >
+        Up at Night
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "roboto-regular",
+              "fontSize": 22,
+              "lineHeight": 33,
+            },
+            Object {
+              "color": "#8F92B2",
+              "fontSize": 22,
+              "lineHeight": 33,
+            },
+          ]
+        }
+      >
+        Jan 20th 2021, 15:56
+      </Text>
+    </View>
+  </View>
+</View>
+`;

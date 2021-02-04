@@ -11,7 +11,7 @@ import colors from "../constants/colors";
 
 export default function Home({ navigation }: HomeScreenProps) {
   const { status, Data } = Loadevents();
-  console.log(Data);
+
   const { state } = useContext(AppContext);
 
   const _renderItem = ({ item, index }: { item: Eventdata; index: number }) => {
@@ -32,6 +32,7 @@ export default function Home({ navigation }: HomeScreenProps) {
       />
     );
   };
+
   return (
     <>
       <StatusBar backgroundColor={colors.white} style="dark" />
