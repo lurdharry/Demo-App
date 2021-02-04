@@ -10,8 +10,6 @@ export const AppContext = createContext<{
   dispatch: () => null,
 });
 
-// export const AppConsumer = AppContext.Consumer;
-
 export function AppProvider(props: any) {
   const [state, dispatch] = React.useReducer(EventReducer, initialState);
   const value = { state, dispatch };

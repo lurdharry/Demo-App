@@ -1,4 +1,4 @@
-import React, { ReactChild } from "react";
+import React, { ReactElement } from "react";
 import { View, Text } from "react-native";
 import { HeaderStyles as styles } from "./styles";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -13,15 +13,13 @@ interface props {
 
 interface detailProps extends props {
   onPress: () => void;
-  icon: ReactChild;
+  icon: ReactElement;
   id: string;
 }
 
 export const Header: React.FC<props> = ({ name }) => (
   <View style={styles.header}>
-    <SharedElement id="header" style={{ alignItems: "center" }}>
-      <RegularText title={name} style={styles.name} />
-    </SharedElement>
+    <RegularText title={name} style={styles.name} />
     <RegularText title="Events" style={styles.event} />
   </View>
 );
@@ -37,14 +35,10 @@ export const DetailScreenHeader: React.FC<detailProps> = ({
       <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
         <BackArrow />
       </TouchableOpacity>
-
       <View style={styles.nameBox}>
-        <SharedElement id="header">
-          <RegularText title={name} style={styles.detailName} />
-        </SharedElement>
+        <RegularText title={name} style={styles.detailName} />
         <MediumText title="Event" style={styles.detailEvent} />
       </View>
-
       <View style={styles.empty} />
     </View>
     <SharedElement id={id}>{icon}</SharedElement>

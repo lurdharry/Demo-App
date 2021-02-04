@@ -11,7 +11,7 @@ import { NavigationParamList } from "../types/types.d";
 
 const options: StackNavigationOptions = {
   headerShown: false,
-  cardStyleInterpolator: ({ current: { progress }, layouts }) => {
+  cardStyleInterpolator: ({ current: { progress } }) => {
     return {
       cardStyle: {
         opacity: progress,
@@ -24,16 +24,16 @@ const SharedConfig: SharedElementsComponentConfig = route => {
   const data = route.params;
   return [
     {
-      id: data.event.id,
+      id: `item.${data.event.id}.icon`,
       resize: "stretch",
       align: "center-top",
       animation: "fade",
     },
     {
-      id: "header",
+      id: `item.${data.event.id}.title`,
       resize: "stretch",
-      align: "center-top",
-      animation: "fade-out",
+      align: "left-top",
+      animation: "fade",
     },
   ];
 };

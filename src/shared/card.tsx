@@ -1,4 +1,4 @@
-import React, { ReactChild } from "react";
+import React, { ReactElement } from "react";
 import {
   View,
   ViewStyle,
@@ -14,7 +14,7 @@ interface props extends TouchableOpacityProps {
   name: string;
   date: string;
   checked?: boolean;
-  icon: ReactChild;
+  icon: ReactElement;
   style?: ViewStyle;
   id?: string;
   onPress: () => void;
@@ -42,10 +42,12 @@ export const EventCard: React.FC<props> = ({
         activeOpacity={0.7}
         onPress={onPress}
       >
-        <SharedElement id={`${id}`}>{icon}</SharedElement>
+        <SharedElement id={`item.${id}.icon`}>{icon}</SharedElement>
 
         <View style={styles.left}>
-          <MediumText title={name} style={styles.name} />
+          <SharedElement id={`item.${id}.title`}>
+            <MediumText title={name} style={styles.name} />
+          </SharedElement>
           <RegularText title={Date} style={styles.date} />
         </View>
       </TouchableOpacity>

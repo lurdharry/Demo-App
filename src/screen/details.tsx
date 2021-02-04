@@ -8,6 +8,7 @@ import { getIconAndName } from "./utils";
 import { StatusBar } from "expo-status-bar";
 import colors from "../constants/colors";
 import { AppContext } from "../context/context";
+import { SharedElement } from "react-navigation-shared-element";
 
 export default function Detail({ navigation, route }: DetailScreenProps) {
   const { dispatch, state } = useContext(AppContext);
@@ -33,10 +34,12 @@ export default function Detail({ navigation, route }: DetailScreenProps) {
         name="Gloria Thompson"
         onPress={() => navigation.pop()}
         icon={icon}
-        id={detail.id}
+        id={`item.${detail.id}.icon`}
       />
       <View style={styles.second}>
-        <MediumText title={name} style={styles.name} />
+        <SharedElement id={`item.${detail.id}.title`}>
+          <MediumText title={name} style={styles.name} />
+        </SharedElement>
         <RegularText
           title="There have been abnormalities in their usual behaviour."
           style={styles.subTitle}
