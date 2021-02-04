@@ -1,4 +1,4 @@
-# Mysense's test app
+# Mysense's test app [![lurdharry](https://circleci.com/gh/lurdharry/mySense_Test.svg?style=svg&circle-token=f836a377d42dc7ef0c1d0d308fedf6138c0c0934)](https://github.com/lurdharry/mySense_Test)
 
 ## Getting Started
 
