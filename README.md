@@ -1,5 +1,9 @@
 # Mysense's test app [![lurdharry](https://circleci.com/gh/lurdharry/mySense_Test.svg?style=svg&circle-token=f836a377d42dc7ef0c1d0d308fedf6138c0c0934)](https://github.com/lurdharry/mySense_Test)
 
+## Preview
+
+![App Preveiw](documentation/Preview.gif)
+
 ## Getting Started
 
 - Fork or Clone the repo, then set it up:
