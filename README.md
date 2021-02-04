@@ -19,9 +19,9 @@ $ yarn install
 
 ### Task
 
-1. Bootstrap a Typescript React Native project using Expo [link](https://expo.io/).
+1. Bootstrap a Typescript React Native project using [Expo](https://expo.io/).
 
-2. Hit a mock endpoint for a list of events using [link](https://react-query.tanstack.com/).
+2. Hit a mock endpoint for a list of events using [react-query](https://react-query.tanstack.com/).
 
 3. Display the list of events as clickable cards.
 
