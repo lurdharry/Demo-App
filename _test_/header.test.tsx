@@ -1,8 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { Text } from "react-native";
+import { View } from "react-native";
 import { Header, DetailScreenHeader } from "../src/shared/header";
-import { RegularText } from "../src/shared";
 
 jest.mock("react-native-shared-element", () => {
   const { View } = require("react-native");
@@ -11,15 +10,28 @@ jest.mock("react-native-shared-element", () => {
   };
   return {
     __esModule: true,
-    // default: SharedElement,
     SharedElement: SharedElement,
   };
 });
 
 describe("Header", () => {
+  const text = "Jack Dorsey";
+  const mockFn = jest.fn();
+
   it("HeaderBar component renders correctly", () => {
-    const text = "Jack Dorsey";
     const instance = renderer.create(<Header name={text} />);
+    expect(instance).toMatchSnapshot();
+  });
+
+  it("DetailHeader component renders correctly", () => {
+    const instance = renderer.create(
+      <DetailScreenHeader
+        name={text}
+        icon={<View />}
+        id="header"
+        onPress={mockFn}
+      />
+    );
     expect(instance).toMatchSnapshot();
   });
 });

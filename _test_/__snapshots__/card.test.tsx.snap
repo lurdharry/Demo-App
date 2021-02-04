@@ -48,25 +48,27 @@ exports[`<EvevtCard/> EvevtCard component renders correctly 1`] = `
         }
       }
     >
-      <Text
-        style={
-          Array [
-            Object {
-              "color": "#000000",
-              "fontFamily": "roboto-medium",
-              "fontSize": 22,
-              "lineHeight": 33,
-            },
-            Object {
-              "color": "#343866",
-              "fontSize": 25.5,
-              "lineHeight": 44,
-            },
-          ]
-        }
-      >
-        Up at Night
-      </Text>
+      <View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "roboto-medium",
+                "fontSize": 22,
+                "lineHeight": 33,
+              },
+              Object {
+                "color": "#343866",
+                "fontSize": 25.5,
+                "lineHeight": 44,
+              },
+            ]
+          }
+        >
+          Up at Night
+        </Text>
+      </View>
       <Text
         style={
           Array [

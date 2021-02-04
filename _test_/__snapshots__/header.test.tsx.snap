@@ -1,5 +1,162 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Header DetailHeader component renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#00AEC7",
+      "paddingBottom": 51,
+      "paddingHorizontal": 47,
+      "paddingTop": 14.5,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 64,
+        "width": "100%",
+      }
+    }
+  >
+    <RNGestureHandlerButton
+      collapsable={false}
+      onGestureEvent={[Function]}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+      onHandlerStateChange={[Function]}
+      rippleColor={0}
+    >
+      <View
+        accessible={true}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <RNSVGSvgView
+          align="xMidYMid"
+          bbHeight="24"
+          bbWidth="24"
+          fill="none"
+          focusable={false}
+          height="24"
+          meetOrSlice={0}
+          minX={0}
+          minY={0}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "borderWidth": 0,
+              },
+              Object {
+                "flex": 0,
+                "height": 24,
+                "width": 24,
+              },
+            ]
+          }
+          vbHeight={24}
+          vbWidth={24}
+          width="24"
+        >
+          <RNSVGGroup
+            fill={null}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+          >
+            <RNSVGPath
+              d="M22 12H2"
+              propList={
+                Array [
+                  "stroke",
+                ]
+              }
+              stroke={4294967295}
+            />
+            <RNSVGPath
+              d="M11 21L2 12L11 3"
+              propList={
+                Array [
+                  "stroke",
+                ]
+              }
+              stroke={4294967295}
+            />
+          </RNSVGGroup>
+        </RNSVGSvgView>
+      </View>
+    </RNGestureHandlerButton>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "roboto-regular",
+              "fontSize": 22,
+              "lineHeight": 33,
+            },
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 22,
+              "lineHeight": 33,
+            },
+          ]
+        }
+      >
+        Jack Dorsey
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "roboto-medium",
+              "fontSize": 22,
+              "lineHeight": 33,
+            },
+            Object {
+              "color": "#FFFFFF",
+            },
+          ]
+        }
+      >
+        Event
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "height": 44,
+          "width": 43.5,
+        }
+      }
+    />
+  </View>
+  <View>
+    <View />
+  </View>
+</View>
+`;
+
 exports[`Header HeaderBar component renders correctly 1`] = `
 <View
   style={
@@ -12,26 +169,24 @@ exports[`Header HeaderBar component renders correctly 1`] = `
     }
   }
 >
-  <View>
-    <Text
-      style={
-        Array [
-          Object {
-            "color": "#000000",
-            "fontFamily": "roboto-regular",
-            "fontSize": 22,
-            "lineHeight": 33,
-          },
-          Object {
-            "color": "#8F92B2",
-            "fontSize": 22,
-          },
-        ]
-      }
-    >
-      Jack Dorsey
-    </Text>
-  </View>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "fontFamily": "roboto-regular",
+          "fontSize": 22,
+          "lineHeight": 33,
+        },
+        Object {
+          "color": "#8F92B2",
+          "fontSize": 22,
+        },
+      ]
+    }
+  >
+    Jack Dorsey
+  </Text>
   <Text
     style={
       Array [
