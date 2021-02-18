@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import { fetchevent, Loadevents } from "../src/hooks/loadevents";
@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { renderHook } from "@testing-library/react-hooks";
 
 const queryClient = new QueryClient();
-const wrapper = ({ children }: { children: any }) => (
+const wrapper = ({ children }: { children: ReactNode }) => (
   <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 );
 
