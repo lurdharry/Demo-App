@@ -1,9 +1,10 @@
 import React, { ReactNode } from "react";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-import { fetchevent, Loadevents } from "../src/hooks/loadevents";
+import { useEvents } from "../src/hooks/useEvents";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { renderHook } from "@testing-library/react-hooks";
+import { fetchEvents } from "../src/utils";
 
 const queryClient = new QueryClient();
 const wrapper = ({ children }: { children: ReactNode }) => (
@@ -30,18 +31,18 @@ describe("Fetch EventList from server", () => {
     .onGet("https://next.json-generator.com/api/json/get/E12TK9oJ9")
     .reply(200, data);
 
-  it("return data when fetchevent is called", done => {
-    fetchevent().then(response => {
+  it("return data when fetchEvents is called", done => {
+    fetchEvents().then(response => {
       expect(response).toEqual(data);
       done();
     });
   });
 
-  it("test Loadevents react-query hook", async () => {
-    const { result, waitFor } = renderHook(() => Loadevents(), { wrapper });
+  it("test useEvents hook", async () => {
+    const { result, waitFor } = renderHook(() => useEvents(), { wrapper });
     await waitFor(() => {
       return result.current.isSuccess;
     });
-    expect(result.current.Data).toEqual(data);
+    expect(result.current.eventsData).toEqual(data);
   });
 });
