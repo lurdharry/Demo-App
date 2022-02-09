@@ -7,7 +7,10 @@ import { fetchEvents, updateEvent } from "../utils";
 export const useEvents = () => {
   const queryClient = useQueryClient();
 
-  const { data, status, ...rest } = useQuery("events", fetchEvents);
+  const { data, status, ...rest } = useQuery("events", fetchEvents, {
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+  });
 
   const markEvent = useCallback((id: string) => {
     queryClient.cancelQueries("events"); // cancel any ongoing query
