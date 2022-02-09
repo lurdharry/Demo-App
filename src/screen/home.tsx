@@ -1,18 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import { View, FlatList, ActivityIndicator } from "react-native";
 import { Header, EventCard } from "../shared/index";
 import { StatusBar } from "expo-status-bar";
-import { Loadevents } from "../hooks/loadevents";
+import { useEvents } from "../hooks/useEvents";
 import { Eventdata, HomeScreenProps } from "../types/types.d";
 import { getIconAndName } from "./utils";
 import { HomeStyles as styles } from "./styles";
-import { AppContext } from "../context/context";
 import colors from "../constants/colors";
 
 export default function Home({ navigation }: HomeScreenProps) {
-  const { status, Data } = Loadevents();
-
-  const { state } = useContext(AppContext);
+  const { status, eventsData } = useEvents();
 
   const _renderItem = ({ item, index }: { item: Eventdata; index: number }) => {
     const { name, icon } = getIconAndName(item.type);
@@ -23,7 +20,7 @@ export default function Home({ navigation }: HomeScreenProps) {
         icon={icon}
         name={name}
         date={item.date}
-        checked={state.CheckedEvent.includes(item.eventId)}
+        checked={item.checked}
         onPress={() =>
           navigation.navigate("Detail", {
             event: { id: item.eventId, type: item.type },
@@ -45,14 +42,14 @@ export default function Home({ navigation }: HomeScreenProps) {
             color={colors.pablue}
           />
         )}
-        {Data && (
+        {eventsData && (
           <FlatList
             style={styles.listContainer}
             contentContainerStyle={styles.content}
-            data={Data}
+            data={eventsData}
             renderItem={_renderItem}
             keyExtractor={item => item.eventId}
-            extraData={Data}
+            extraData={eventsData}
           />
         )}
       </View>

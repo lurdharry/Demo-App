@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useMemo } from "react";
 import { View } from "react-native";
 import { DetailScreenHeader, MediumText, RegularText } from "../shared";
 import { DetailScreenProps } from "../types/types.d";
@@ -7,25 +7,22 @@ import { DetailStyles as styles } from "./styles";
 import { getIconAndName } from "./utils";
 import { StatusBar } from "expo-status-bar";
 import colors from "../constants/colors";
-import { AppContext } from "../context/context";
 import { SharedElement } from "react-navigation-shared-element";
+import { useEvents } from "../hooks/useEvents";
 
 export default function Detail({ navigation, route }: DetailScreenProps) {
-  const { dispatch, state } = useContext(AppContext);
   // navigation props
-  const detail = route.params?.event;
+  const { id, type } = route.params?.event;
 
-  const isAck = state.CheckedEvent.includes(detail.id);
+  const { markEvent, checkedEventStatus } = useEvents();
 
-  // buttonAction
-  const setAction = async () => {
-    await dispatch({
-      type: "SET_ACTIVE",
-      payload: { id: detail.id },
-    });
-  };
+  const isEventAcknowledged = useMemo(
+    () => checkedEventStatus(id),
+    [checkedEventStatus]
+  );
+
   // icon and title handler
-  const { icon, name } = getIconAndName(detail.type, true);
+  const { icon, name } = getIconAndName(type, true);
 
   return (
     <View style={styles.container}>
@@ -34,10 +31,10 @@ export default function Detail({ navigation, route }: DetailScreenProps) {
         name="Gloria Thompson"
         onPress={() => navigation.pop()}
         icon={icon}
-        id={`item.${detail.id}.icon`}
+        id={`item.${id}.icon`}
       />
       <View style={styles.second}>
-        <SharedElement id={`item.${detail.id}.title`}>
+        <SharedElement id={`item.${id}.title`}>
           <MediumText title={name} style={styles.name} />
         </SharedElement>
         <RegularText
@@ -48,8 +45,8 @@ export default function Detail({ navigation, route }: DetailScreenProps) {
           <Button title="Visualise" style={styles.button} />
           <Button
             isGrey
-            title={isAck ? "Acknowledged" : "Acknowledge"}
-            onPress={setAction}
+            title={isEventAcknowledged ? "Acknowledged" : "Acknowledge"}
+            onPress={() => markEvent(id)}
           />
         </View>
       </View>
